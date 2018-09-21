@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "babel-node ./server.js",
+    "build": "relay-compiler --src ./js/ --schema ./data/schema.graphql",
+    "update-schema": "babel-node ./scripts/updateSchema.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-relay": "^1.7.0-rc.1",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^14.0.2",
+    "graphql-relay": "^0.5.5",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-relay": "^1.7.0-rc.1",
+    "webpack": "^4.18.0",
+    "webpack-dev-server": "^3.1.8",
+    "whatwg-fetch": "2.0.4"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.0.0",
+    "babel-eslint": "^9.0.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "relay-compiler": "^1.7.0-rc.1"
+  }
+}
