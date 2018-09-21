@@ -1,0 +1,25 @@
+.card {
+  margin: 5px;
+  width: 220px;
+
+  &__media {
+    height: 190px;
+    background-color: #f9f9f9;
+    background-size: 70% !important;
+  }
+
+  &__title {
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box !important;
+  }
+}
+
+.product {
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+}

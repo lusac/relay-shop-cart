@@ -15,30 +15,26 @@ body, html {
   box-sizing: border-box;
 }
 
-.product {
+.card {
   margin: 5px;
-  width: 200px;
-  height: 260px;
-  padding: 20px;
-  display: flex;
-  background: #FFF;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
+  width: 220px;
 }
+.card__media {
+  height: 190px;
+  background-color: #f9f9f9;
+  background-size: 70% !important;
+}
+.card__title {
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box !important;
+}
+
 .product-list {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-}
-.product__image {
-  max-width: 100px;
-}
-.product__name {
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
 }
 
 /*# sourceMappingURL=index.css.map */
