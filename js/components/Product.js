@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 import {createFragmentContainer, graphql} from 'react-relay';
 
 class Product extends React.Component {
@@ -14,6 +15,9 @@ class Product extends React.Component {
 
         <span className="product__price">
           R$ {this.props.product.price.toFixed(2)} </span>
+
+        <Button variant="contained" color="primary">
+          Comprar </Button>
       </li>
     );
   }
