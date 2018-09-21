@@ -11,7 +11,42 @@ h1, h2, h3, p, ul {
 body, html {
   margin: 0;
   padding: 0;
+  background: #EFEFEF;
   box-sizing: border-box;
+}
+
+.header {
+  color: #FFF;
+  height: 60px;
+  background: #000;
+  line-height: 60px;
+  margin-bottom: 25px;
+}
+
+.product {
+  margin: 5px;
+  width: 200px;
+  height: 260px;
+  padding: 20px;
+  display: flex;
+  background: #FFF;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.product__image {
+  max-width: 160px;
+}
+.product__name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 /*# sourceMappingURL=index.css.map */
