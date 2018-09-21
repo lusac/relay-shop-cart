@@ -1,6 +1,7 @@
 import {
   GraphQLBoolean,
   GraphQLInt,
+  GraphQLFloat,
   GraphQLObjectType,
   GraphQLSchema,
   GraphQLString
@@ -52,8 +53,16 @@ const GraphQLProduct = new GraphQLObjectType({
       type: GraphQLString,
       resolve: obj => obj.name,
     },
-    amount: {
+    price: {
+      type: GraphQLFloat,
+      resolve: obj => obj.price,
+    },
+    image: {
       type: GraphQLString,
+      resolve: obj => obj.image,
+    },
+    amount: {
+      type: GraphQLFloat,
       resolve: obj => obj.amount,
     },
     complete: {

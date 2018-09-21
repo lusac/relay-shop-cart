@@ -23,7 +23,9 @@ type Product implements Node {
   """The ID of an object"""
   id: ID!
   name: String
-  amount: String
+  price: Float
+  image: String
+  amount: Float
   complete: Boolean
 }
 
