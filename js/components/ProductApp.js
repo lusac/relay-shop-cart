@@ -1,20 +1,16 @@
-import ProductList from './ProductList';
-
 import React from 'react';
+import Header from './Header';
+import ProductList from './ProductList';
 import {createFragmentContainer, graphql} from 'react-relay';
 
 class ProductApp extends React.Component {
   render() {
     return (
-      <div>
-        <section className="productapp">
-          <header className="header">
-            <h1>Produtos</h1>
-          </header>
-          <ProductList viewer={this.props.viewer} />
-        </section>
-      </div>
-    );
+      <section className="productapp">
+        <Header />
+        <ProductList viewer={this.props.viewer} />
+      </section>
+    )
   }
 }
 
@@ -25,5 +21,5 @@ export default createFragmentContainer(ProductApp, {
       totalCount
       ...ProductList_viewer
     }
-  `,
-});
+  `
+})
