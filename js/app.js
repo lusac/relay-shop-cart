@@ -34,12 +34,19 @@ ReactDOM.render(
         viewer {
           ...ProductApp_viewer
         }
+        products {
+          ...ProductApp_products
+        }
       }
     `}
     variables={{}}
     render={({error, props}) => {
       if (props) {
+<<<<<<< HEAD
         return <ProductApp viewer={props.viewer} />
+=======
+        return <ProductApp viewer={props.viewer} products={props.products} />
+>>>>>>> Refatorando listagem de produtos e cart
       } else {
         return <div>Loading</div>
       }

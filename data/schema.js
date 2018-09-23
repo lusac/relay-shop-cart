@@ -4,7 +4,12 @@ import {
   GraphQLObjectType,
   GraphQLSchema,
   GraphQLString,
+<<<<<<< HEAD
   GraphQLNonNull
+=======
+  GraphQLNonNull,
+  GraphQLList,
+>>>>>>> Refatorando listagem de produtos e cart
 } from 'graphql'
 
 import {
@@ -31,6 +36,10 @@ import {
 const {nodeInterface, nodeField} = nodeDefinitions(
   globalId => {
     const {type, id} = fromGlobalId(globalId)
+<<<<<<< HEAD
+=======
+    console.log('type: ' + type)
+>>>>>>> Refatorando listagem de produtos e cart
     if (type === 'Product') {
       return getProduct(id)
     } else if (type === 'User') {
@@ -82,16 +91,19 @@ const GraphQLUser = new GraphQLObjectType({
   name: 'User',
   fields: {
     id: globalIdField('User'),
-    products: {
+    cart: {
       type: ProductsConnection,
       args: connectionArgs,
       resolve: (obj, args) =>
+<<<<<<< HEAD
         connectionFromArray(getProducts(), args)
     },
     cart: {
       type: ProductsConnection,
       args: connectionArgs,
       resolve: (obj, args) =>
+=======
+>>>>>>> Refatorando listagem de produtos e cart
         connectionFromArray(getCart(), args)
     }
   },
@@ -127,6 +139,13 @@ const Query = new GraphQLObjectType({
       type: GraphQLUser,
       resolve: () => getViewer()
     },
+<<<<<<< HEAD
+=======
+    products: {
+      type: new GraphQLList(GraphQLProduct),
+      resolve: () => getProducts()
+    },
+>>>>>>> Refatorando listagem de produtos e cart
     node: nodeField
   }
 })
