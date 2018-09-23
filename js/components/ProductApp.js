@@ -18,7 +18,6 @@ export default createFragmentContainer(ProductApp, {
   viewer: graphql`
     fragment ProductApp_viewer on User {
       id
-      totalCount
       ...ProductList_viewer
     }
   `

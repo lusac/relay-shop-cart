@@ -41,7 +41,6 @@ class Product extends React.Component {
 export default createFragmentContainer(Product, {
   product: graphql`
     fragment Product_product on Product {
-      complete
       id
       name
       image
@@ -52,8 +51,6 @@ export default createFragmentContainer(Product, {
   viewer: graphql`
     fragment Product_viewer on User {
       id
-      totalCount
-      completedCount
     }
   `,
 });

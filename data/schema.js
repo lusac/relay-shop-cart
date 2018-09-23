@@ -64,11 +64,7 @@ const GraphQLProduct = new GraphQLObjectType({
     amount: {
       type: GraphQLFloat,
       resolve: obj => obj.amount,
-    },
-    complete: {
-      type: GraphQLBoolean,
-      resolve: obj => obj.complete,
-    },
+    }
   },
   interfaces: [nodeInterface],
 });
@@ -96,15 +92,7 @@ const GraphQLUser = new GraphQLObjectType({
       },
       resolve: (obj, {status, ...args}) =>
         connectionFromArray(getProducts(status), args),
-    },
-    totalCount: {
-      type: GraphQLInt,
-      resolve: () => getProducts().length,
-    },
-    completedCount: {
-      type: GraphQLInt,
-      resolve: () => getProducts('completed').length,
-    },
+    }
   },
   interfaces: [nodeInterface],
 });

@@ -29,14 +29,11 @@ export default createFragmentContainer(ProductList, {
         edges {
           node {
             id
-            complete
             ...Product_product
           }
         }
       }
       id
-      totalCount
-      completedCount
       ...Product_viewer
     }
   `,

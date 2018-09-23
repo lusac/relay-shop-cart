@@ -46,11 +46,7 @@ export function getProduct(id) {
 }
 
 export function getProducts(status = 'any') {
-  const products = productsIdsByUser[USER_ID].map(id => productsById[id]);
-  if (status === 'any') {
-    return products;
-  }
-  return products.filter(product => product.complete === (status === 'completed'));
+  return productsIdsByUser[USER_ID].map(id => productsById[id]);
 }
 
 export function getUser(id) {

@@ -26,7 +26,6 @@ type Product implements Node {
   price: Float
   image: String
   amount: Float
-  complete: Boolean
 }
 
 """A connection to a list of items."""
@@ -61,6 +60,4 @@ type User implements Node {
   """The ID of an object"""
   id: ID!
   products(status: String = "any", after: String, first: Int, before: String, last: Int): ProductConnection
-  totalCount: Int
-  completedCount: Int
 }
