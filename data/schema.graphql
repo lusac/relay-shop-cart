@@ -59,5 +59,5 @@ type Query {
 type User implements Node {
   """The ID of an object"""
   id: ID!
-  products(status: String = "any", after: String, first: Int, before: String, last: Int): ProductConnection
+  products(after: String, first: Int, before: String, last: Int): ProductConnection
 }

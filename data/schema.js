@@ -83,15 +83,9 @@ const GraphQLUser = new GraphQLObjectType({
     id: globalIdField('User'),
     products: {
       type: ProductsConnection,
-      args: {
-        status: {
-          type: GraphQLString,
-          defaultValue: 'any',
-        },
-        ...connectionArgs,
-      },
-      resolve: (obj, {status, ...args}) =>
-        connectionFromArray(getProducts(status), args),
+      args: { ...connectionArgs },
+      resolve: (obj, {...args}) =>
+        connectionFromArray(getProducts(), args),
     }
   },
   interfaces: [nodeInterface],
