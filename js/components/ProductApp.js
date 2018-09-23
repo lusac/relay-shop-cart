@@ -7,7 +7,7 @@ class ProductApp extends React.Component {
   render() {
     return (
       <section className="productapp">
-        <Header />
+        <Header viewer={this.props.viewer} />
         <ProductList viewer={this.props.viewer} />
       </section>
     )
@@ -18,6 +18,7 @@ export default createFragmentContainer(ProductApp, {
   viewer: graphql`
     fragment ProductApp_viewer on User {
       id
+      ...Header_viewer
       ...ProductList_viewer
     }
   `
