@@ -75,9 +75,5 @@ type Query {
 type User implements Node {
   """The ID of an object"""
   id: ID!
-<<<<<<< HEAD
-  products(after: String, first: Int, before: String, last: Int): ProductConnection
-=======
->>>>>>> Refatorando listagem de produtos e cart
   cart(after: String, first: Int, before: String, last: Int): ProductConnection
 }

@@ -8,11 +8,7 @@ class ProductApp extends React.Component {
     return (
       <section className="productapp">
         <Header viewer={this.props.viewer} />
-<<<<<<< HEAD
-        <ProductList viewer={this.props.viewer} />
-=======
         <ProductList viewer={this.props.viewer} products={this.props.products} />
->>>>>>> Refatorando listagem de produtos e cart
       </section>
     )
   }
