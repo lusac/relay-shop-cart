@@ -13,9 +13,6 @@ const usersById = {
 
 // Mock Products data
 const productsById = {};
-const productsIdsByUser = {
-  [USER_ID]: [],
-};
 let nextProductId = 0;
 
 addProduct('Game God Of War - PS4', 129.99, 'product_img1.jpg', 7);
@@ -37,7 +34,6 @@ export function addProduct(name, price, image, amount) {
   product.image = image;
   product.amount = amount;
   productsById[product.id] = product;
-  productsIdsByUser[USER_ID].push(product.id);
   return product.id;
 }
 
@@ -45,8 +41,8 @@ export function getProduct(id) {
   return productsById[id];
 }
 
-export function getProducts(status = 'any') {
-  return productsIdsByUser[USER_ID].map(id => productsById[id]);
+export function getProducts() {
+  return Object.keys(productsById).map((key) => productsById[key])
 }
 
 export function getUser(id) {
