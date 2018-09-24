@@ -9,12 +9,17 @@ import {createFragmentContainer, graphql} from 'react-relay'
 import AddProductToCartMutation from '../mutations/AddProductToCartMutation'
 
 class Product extends React.Component {
-  _handleBuyProduct = text => {
-    AddProductToCartMutation.commit(
-      this.props.relay.environment,
-      this.props.product,
-      this.props.viewer
-    )
+  _handleBuyProduct = () => {
+    if (this.props.product.amount > 0) {
+      AddProductToCartMutation.commit(
+        this.props.relay.environment,
+        this.props.product,
+        this.props.viewer
+      )
+      return;
+    }
+
+    alert('Produto Esgotado!')
   }
 
   render() {
@@ -38,7 +43,7 @@ class Product extends React.Component {
         </CardContent>
         <CardActions>
           <Button
-            onClick={this._handleBuyProduct.bind(this)}
+            onClick={this._handleBuyProduct}
             variant="contained"
             color="primary">
             Comprar
