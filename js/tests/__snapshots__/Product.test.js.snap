@@ -24,17 +24,21 @@ exports[`Product component snapshot Product default 1`] = `
     <p
       className="MuiTypography-root-32 MuiTypography-body1-41"
     >
+      Em estoque: 
+      1
+    </p>
+    <p
+      className="MuiTypography-root-32 MuiTypography-body1-41 card__price"
+    >
       R$ 
       11.00
-       - 
-      1
     </p>
   </div>
   <div
     className="MuiCardActions-root-58"
   >
     <button
-      className="MuiButtonBase-root-86 MuiButton-root-60 MuiButton-contained-71 MuiButton-containedPrimary-72 MuiButton-raised-74 MuiButton-raisedPrimary-75 MuiCardActions-action-59"
+      className="MuiButtonBase-root-86 MuiButton-root-60 MuiButton-contained-71 MuiButton-containedPrimary-72 MuiButton-raised-74 MuiButton-raisedPrimary-75 card__button MuiCardActions-action-59"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}

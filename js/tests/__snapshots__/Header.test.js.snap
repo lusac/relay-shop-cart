@@ -5,7 +5,7 @@ exports[`Header component snapshot Header default 1`] = `
   className="MuiPaper-root-10 MuiPaper-elevation4-16 MuiAppBar-root-1 MuiAppBar-positionStatic-5 MuiAppBar-colorPrimary-8"
 >
   <div
-    className="MuiToolbar-root-37 MuiToolbar-regular-39 MuiToolbar-gutters-38"
+    className="MuiToolbar-root-37 MuiToolbar-regular-39 MuiToolbar-gutters-38 header__toolbar"
   >
     <h2
       className="MuiTypography-root-41 MuiTypography-title-47 MuiTypography-colorInherit-61 MuiTypography-noWrap-58"
@@ -13,6 +13,9 @@ exports[`Header component snapshot Header default 1`] = `
       Relay Shop
     </h2>
     <div>
+      <small>
+        R$ NaN
+      </small>
       <button
         className="MuiButtonBase-root-73 MuiIconButton-root-67 MuiIconButton-colorInherit-68"
         disabled={false}
@@ -63,173 +66,178 @@ exports[`Header component snapshot Header default 1`] = `
         />
       </button>
       <div
-        className="mini-cart hidden"
+        className="mini-cart--hidden"
       >
         <div
-          className="mini-cart__header"
-        >
-          carrinho
-        </div>
+          className="mini-cart__overlay"
+          onClick={[Function]}
+        />
         <div
-          className="mini-cart__section"
+          className="mini-cart"
         >
-          <ul
-            className="mini-cart__items"
+          <div
+            className="mini-cart__header"
           >
-            <li
-              className="mini-cart__item"
+            carrinho
+          </div>
+          <div
+            className="mini-cart__section"
+          >
+            <ul
+              className="mini-cart__items"
             >
-              <span
-                className="mini-cart__item__remove"
-                onClick={[Function]}
+              <li
+                className="mini-cart__item"
               >
-                X
-              </span>
-              <img
-                className="mini-cart__item__img"
-                src="/imgs/undefined"
-              />
-              <span
-                className="mini-cart__item__middle"
-              >
-                <h5
-                  className="mini-cart__item__name"
-                />
-                <small
-                  className="mini-cart__item__qty"
-                >
-                  Quantidade: 
-                  1
-                </small>
                 <span
-                  className="mini-cart__change-qty"
+                  className="mini-cart__item__remove"
+                  onClick={[Function]}
                 >
-                  <span
-                    onClick={[Function]}
+                  X
+                </span>
+                <img
+                  className="mini-cart__item__img"
+                  src="/imgs/undefined"
+                />
+                <span
+                  className="mini-cart__item__middle"
+                >
+                  <h5
+                    className="mini-cart__item__name"
+                  />
+                  <small
+                    className="mini-cart__item__qty"
                   >
-                    aumentar
-                  </span>
+                    Quantidade: 
+                    1
+                  </small>
                   <span
-                    onClick={[Function]}
+                    className="mini-cart__change-qty"
                   >
-                    diminuir
+                    <span
+                      onClick={[Function]}
+                    >
+                      aumentar
+                    </span>
+                    <span
+                      onClick={[Function]}
+                    >
+                      diminuir
+                    </span>
                   </span>
                 </span>
-              </span>
-              <strong
-                className="mini-cart__item__total"
-              >
-                R$ 
-                NaN
-              </strong>
-            </li>
-            <li
-              className="mini-cart__item"
-            >
-              <span
-                className="mini-cart__item__remove"
-                onClick={[Function]}
-              >
-                X
-              </span>
-              <img
-                className="mini-cart__item__img"
-                src="/imgs/undefined"
-              />
-              <span
-                className="mini-cart__item__middle"
-              >
-                <h5
-                  className="mini-cart__item__name"
-                />
-                <small
-                  className="mini-cart__item__qty"
+                <strong
+                  className="mini-cart__item__total"
                 >
-                  Quantidade: 
-                  1
-                </small>
+                  R$ 
+                  NaN
+                </strong>
+              </li>
+              <li
+                className="mini-cart__item"
+              >
                 <span
-                  className="mini-cart__change-qty"
+                  className="mini-cart__item__remove"
+                  onClick={[Function]}
                 >
-                  <span
-                    onClick={[Function]}
+                  X
+                </span>
+                <img
+                  className="mini-cart__item__img"
+                  src="/imgs/undefined"
+                />
+                <span
+                  className="mini-cart__item__middle"
+                >
+                  <h5
+                    className="mini-cart__item__name"
+                  />
+                  <small
+                    className="mini-cart__item__qty"
                   >
-                    aumentar
-                  </span>
+                    Quantidade: 
+                    1
+                  </small>
                   <span
-                    onClick={[Function]}
+                    className="mini-cart__change-qty"
                   >
-                    diminuir
+                    <span
+                      onClick={[Function]}
+                    >
+                      aumentar
+                    </span>
+                    <span
+                      onClick={[Function]}
+                    >
+                      diminuir
+                    </span>
                   </span>
                 </span>
-              </span>
-              <strong
-                className="mini-cart__item__total"
-              >
-                R$ 
-                NaN
-              </strong>
-            </li>
-            <li
-              className="mini-cart__item"
-            >
-              <span
-                className="mini-cart__item__remove"
-                onClick={[Function]}
-              >
-                X
-              </span>
-              <img
-                className="mini-cart__item__img"
-                src="/imgs/undefined"
-              />
-              <span
-                className="mini-cart__item__middle"
-              >
-                <h5
-                  className="mini-cart__item__name"
-                />
-                <small
-                  className="mini-cart__item__qty"
+                <strong
+                  className="mini-cart__item__total"
                 >
-                  Quantidade: 
-                  1
-                </small>
+                  R$ 
+                  NaN
+                </strong>
+              </li>
+              <li
+                className="mini-cart__item"
+              >
                 <span
-                  className="mini-cart__change-qty"
+                  className="mini-cart__item__remove"
+                  onClick={[Function]}
                 >
-                  <span
-                    onClick={[Function]}
+                  X
+                </span>
+                <img
+                  className="mini-cart__item__img"
+                  src="/imgs/undefined"
+                />
+                <span
+                  className="mini-cart__item__middle"
+                >
+                  <h5
+                    className="mini-cart__item__name"
+                  />
+                  <small
+                    className="mini-cart__item__qty"
                   >
-                    aumentar
-                  </span>
+                    Quantidade: 
+                    1
+                  </small>
                   <span
-                    onClick={[Function]}
+                    className="mini-cart__change-qty"
                   >
-                    diminuir
+                    <span
+                      onClick={[Function]}
+                    >
+                      aumentar
+                    </span>
+                    <span
+                      onClick={[Function]}
+                    >
+                      diminuir
+                    </span>
                   </span>
                 </span>
-              </span>
-              <strong
-                className="mini-cart__item__total"
-              >
-                R$ 
-                NaN
-              </strong>
-            </li>
-          </ul>
-        </div>
-        <div
-          className="mini-cart__footer"
-        >
-          total R$ 
-          R$ NaN
+                <strong
+                  className="mini-cart__item__total"
+                >
+                  R$ 
+                  NaN
+                </strong>
+              </li>
+            </ul>
+          </div>
+          <div
+            className="mini-cart__footer"
+          >
+            total R$ 
+            R$ NaN
+          </div>
         </div>
       </div>
     </div>
-    <small>
-      R$ NaN
-    </small>
   </div>
 </header>
 `;
