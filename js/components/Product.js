@@ -8,7 +8,7 @@ import CardContent from '@material-ui/core/CardContent'
 import {createFragmentContainer, graphql} from 'react-relay'
 import AddProductToCartMutation from '../mutations/AddProductToCartMutation'
 
-class Product extends React.Component {
+export class Product extends React.Component {
   _handleBuyProduct = () => {
     if (this.props.product.amount > 0) {
       AddProductToCartMutation.commit(

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductList component snapshot ProductList default 1`] = `
+<section
+  className="main"
+>
+  <ul
+    className="product-list"
+  />
+</section>
+`;

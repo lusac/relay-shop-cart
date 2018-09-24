@@ -9,7 +9,7 @@ import {createFragmentContainer, graphql} from 'react-relay'
 import MiniCart from './MiniCart'
 
 
-class Header extends React.Component {
+export class Header extends React.Component {
   state = {
     showMiniCart: false
   }

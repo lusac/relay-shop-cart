@@ -3,7 +3,7 @@ import Header from './Header';
 import ProductList from './ProductList';
 import {createFragmentContainer, graphql} from 'react-relay';
 
-class ProductApp extends React.Component {
+export class ProductApp extends React.Component {
   render() {
     return (
       <section className="productapp">

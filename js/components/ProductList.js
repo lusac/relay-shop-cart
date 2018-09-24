@@ -4,7 +4,7 @@ import {createFragmentContainer, graphql} from 'react-relay'
 import Product from './Product'
 
 
-class ProductList extends React.Component {
+export class ProductList extends React.Component {
   renderProducts() {
     return this.props.products.map(product => (
       <Product key={product.id} product={product} viewer={this.props.viewer} />
