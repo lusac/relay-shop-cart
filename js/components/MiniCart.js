@@ -1,6 +1,7 @@
 import React from 'react'
 import AddProductToCartMutation from '../mutations/AddProductToCartMutation'
 import DecreaseProductToCartMutation from '../mutations/DecreaseProductToCartMutation'
+import RemoveProductToCartMutation from '../mutations/RemoveProductToCartMutation'
 
 export default class MiniCart extends React.Component {
   _handleIncreaseProduct(product) {
@@ -24,6 +25,13 @@ export default class MiniCart extends React.Component {
     }
   }
 
+  _handleRemoveProduct(product) {
+    RemoveProductToCartMutation.commit(
+      this.props.environment,
+      product
+    )
+  }
+
   _handleToggle() {
     if (!this.props.show)
       return 'hidden'
@@ -39,6 +47,7 @@ export default class MiniCart extends React.Component {
               let finalPrice = this.props.items[id].qty * this.props.items[id].price
               return (
                 <li key={id} className="mini-cart__item">
+                  <span onClick={this._handleRemoveProduct.bind(this, this.props.items[id])}>X</span>
                   <img
                     className="mini-cart__item__img"
                     src={'/imgs/' + this.props.items[id].image}></img>

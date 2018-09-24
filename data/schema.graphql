@@ -23,6 +23,7 @@ type DecreaseProductToCartPayload {
 type Mutation {
   addProductToCart(input: AddProductToCartInput!): AddProductToCartPayload
   decreaseProductToCart(input: DecreaseProductToCartInput!): DecreaseProductToCartPayload
+  removeProductToCart(input: RemoveProductToCartInput!): RemoveProductToCartPayload
 }
 
 """An object with an ID"""
@@ -82,6 +83,17 @@ type Query {
     """The ID of an object"""
     id: ID!
   ): Node
+}
+
+input RemoveProductToCartInput {
+  id: ID!
+  clientMutationId: String
+}
+
+type RemoveProductToCartPayload {
+  product: Product
+  viewer: User
+  clientMutationId: String
 }
 
 type User implements Node {

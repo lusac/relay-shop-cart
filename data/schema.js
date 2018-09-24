@@ -27,7 +27,8 @@ import {
   getUser,
   getViewer,
   addProductToCart,
-  decreaseProductToCart
+  decreaseProductToCart,
+  removeProductToCart
 } from './database'
 
 const {nodeInterface, nodeField} = nodeDefinitions(
@@ -94,6 +95,29 @@ const GraphQLUser = new GraphQLObjectType({
   interfaces: [nodeInterface]
 })
 
+const GraphQLRemoveProductToCartMutation = mutationWithClientMutationId({
+  name: 'RemoveProductToCart',
+  inputFields: {
+    id: {type: new GraphQLNonNull(GraphQLID)}
+  },
+  outputFields: {
+    product: {
+      type: GraphQLProduct,
+      resolve: ({localProductId}) => getProduct(localProductId)
+    },
+    viewer: {
+      type: GraphQLUser,
+      resolve: () => {
+        return getViewer()},
+    }
+  },
+  mutateAndGetPayload: ({id}) => {
+    const localProductId = fromGlobalId(id).id
+    removeProductToCart(localProductId)
+    return {localProductId}
+  }
+})
+
 const GraphQLDecreaseProductToCartMutation = mutationWithClientMutationId({
   name: 'DecreaseProductToCart',
   inputFields: {
@@ -116,6 +140,7 @@ const GraphQLDecreaseProductToCartMutation = mutationWithClientMutationId({
     return {localProductId}
   }
 })
+
 const GraphQLAddProductToCartMutation = mutationWithClientMutationId({
   name: 'AddProductToCart',
   inputFields: {
@@ -158,7 +183,8 @@ const Mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: () => ({
     addProductToCart: GraphQLAddProductToCartMutation,
-    decreaseProductToCart: GraphQLDecreaseProductToCartMutation
+    decreaseProductToCart: GraphQLDecreaseProductToCartMutation,
+    removeProductToCart: GraphQLRemoveProductToCartMutation
   })
 })
 

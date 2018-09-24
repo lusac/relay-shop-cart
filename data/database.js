@@ -68,6 +68,13 @@ export function decreaseProductToCart(id) {
   })
 }
 
+export function removeProductToCart(id) {
+  const product = getProduct(id)
+  let newCart = viewer.cart.filter(product => product.id !== id)
+  product.amount += viewer.cart.length - newCart.length
+  viewer.cart = newCart
+}
+
 addProduct('Game God Of War - PS4', 129.99, 'product_img1.jpg', 7)
 addProduct('iPhone 8 Plus Prata 64GB Tela 5.5" IOS 11 4G Wi-Fi Câmera 12MP - Apple', 3799, 'product_img2.jpg', 7)
 addProduct('Livro - O Encontro dos Clássicos: Tolkien & George R. R. Martin + Pin Exclusivo', 34.99, 'product_img3.jpg', 3)
