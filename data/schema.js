@@ -105,7 +105,8 @@ const GraphQLAddProductToCartMutation = mutationWithClientMutationId({
     },
     viewer: {
       type: GraphQLUser,
-      resolve: () => getViewer()
+      resolve: () => {
+        return getViewer()},
     }
   },
   mutateAndGetPayload: ({id}) => {

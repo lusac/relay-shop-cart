@@ -8,33 +8,27 @@ const mutation = graphql`
       }
       viewer {
         id
+        cart(
+          first: 2147483647 # max GraphQLInt
+        ) @connection(key: "Header_cart") {
+          edges {
+            node {
+              id
+              ...Product_product
+            }
+          }
+        }
       }
     }
   }
 `
-
-function getOptimisticResponse(product, user) {
-  const viewerPayload = {id: user.id}
-  return {
-    addProductToCart: {
-      product: {
-        id: product.id
-      },
-      cart: {
-        id: product.id
-      },
-      viewer: viewerPayload
-    }
-  }
-}
 
 function commit(environment, product, user) {
   return commitMutation(environment, {
     mutation,
     variables: {
       input: {id: product.id}
-    },
-    optimisticResponse: getOptimisticResponse(product, user)
+    }
   })
 }
 
