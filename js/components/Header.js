@@ -6,23 +6,16 @@ import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import {createFragmentContainer, graphql} from 'react-relay'
+import MiniCart from './MiniCart'
 
-import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
-
-const ITEM_HEIGHT = 52
 
 class Header extends React.Component {
   state = {
-    anchorEl: null,
+    showMiniCart: false
   }
 
-  _handleClick = event => {
-    this.setState({ anchorEl: event.currentTarget })
-  }
-
-  _handleClose = () => {
-    this.setState({ anchorEl: null })
+  _toggleMiniCart = () => {
+    this.setState({ showMiniCart: !this.state.showMiniCart })
   }
 
   _getCartTotalPrice = () => {
@@ -33,13 +26,7 @@ class Header extends React.Component {
     return `R$ ${total.toFixed(2)}`
   }
 
-  _renderCartFooter = () => {
-    return (
-      <div className="xunda">OIE</div>
-    )
-  }
-
-  _renderCartItems = () => {
+  _getFormatProductsDate = () => {
     // Melhorar estrutura do carrinho.
     // Já deveria vir como um dicionário.
     let products = {}
@@ -52,32 +39,10 @@ class Header extends React.Component {
       }
     })
 
-    return (
-      Object.keys(products).map(id => (
-        <MenuItem key={id} onClick={this._handleClose} className="cart-item">
-          <img
-            className="cart-item__img"
-            src={'/imgs/' + products[id].image}></img>
-          <span className="cart-item__middle">
-            <h5 className="cart-item__name">
-              {products[id].name}
-            </h5>
-            <small className="cart-item__qty">
-              Quantidade: {products[id].qty}
-            </small>
-          </span>
-          <strong className="cart-item__total">
-            R$ {products[id].qty * products[id].price}
-          </strong>
-        </MenuItem>
-      ))
-    )
+    return products
   }
 
   render() {
-    const { anchorEl } = this.state;
-    const open = Boolean(anchorEl);
-
     return (
       <AppBar position="static">
         <Toolbar>
@@ -88,26 +53,16 @@ class Header extends React.Component {
           <div>
             <IconButton
               color="inherit"
-              onClick={this._handleClick}>
+              onClick={this._toggleMiniCart.bind(this)}>
               <Badge badgeContent={this.props.viewer.cart.edges.length} color="secondary">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>
-            <Menu
-              anchorEl={anchorEl}
-              open={open}
-              onClose={this._handleClose}
-              PaperProps={{
-                style: {
-                  maxHeight: ITEM_HEIGHT * 4.5,
-                  width: 300,
-                  marginTop: 30
-                },
-              }}
-            >
-              {this._renderCartItems()}
-              {this._renderCartFooter()}
-            </Menu>
+
+            <MiniCart
+              show={this.state.showMiniCart}
+              items={this._getFormatProductsDate()}
+              totalPrice={this._getCartTotalPrice()} />
           </div>
 
           <small>{this._getCartTotalPrice()}</small>

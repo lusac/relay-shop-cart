@@ -37,17 +37,52 @@ body, html {
   list-style: none;
 }
 
-.cart-item {
-  display: flex !important;
-  justify-content: space-between !important;
+.mini-cart {
+  z-index: 2;
+  width: 360px;
+  color: #666;
+  position: absolute;
+  background: #FFF;
+  border: 1px solid #BBB;
+  transition: 0.5s ease all;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
 }
-.cart-item__name {
+.mini-cart.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.mini-cart__header {
+  padding: 10px;
+  color: #666;
+  border-bottom: 1px solid #BBB;
+}
+.mini-cart__items {
+  height: 270px;
+  overflow: hidden;
+  padding: 10px;
+  overflow-y: scroll;
+}
+.mini-cart__item {
+  display: flex;
+  padding: 15px 0;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #DDD;
+}
+.mini-cart__item__name {
   width: 160px;
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
-.cart-item__img {
-  width: 46px;
+.mini-cart__item__img {
+  width: auto;
+  height: 70px;
+}
+.mini-cart__footer {
+  padding: 20px;
+  background: #EEE;
+  border-top: 1px solid #BBB;
 }
 
 /*# sourceMappingURL=index.css.map */
