@@ -62,12 +62,13 @@ export default class MiniCart extends React.Component {
                           {this.props.items[id].name}
                         </h5>
                         <small className="mini-cart__item__qty">
-                          Quantidade: {this.props.items[id].qty}
+                          Quantidade:
+                          <span className="mini-cart__change-qty">
+                            <span onClick={this._handleDecreaseProduct.bind(this, this.props.items[id])}>-</span>
+                            <input type="text" value={this.props.items[id].qty}></input>
+                            <span onClick={this._handleIncreaseProduct.bind(this, this.props.items[id])}>+</span>
+                          </span>
                         </small>
-                        <span className="mini-cart__change-qty">
-                          <span onClick={this._handleIncreaseProduct.bind(this, this.props.items[id])}>aumentar</span>
-                          <span onClick={this._handleDecreaseProduct.bind(this, this.props.items[id])}>diminuir</span>
-                        </span>
                       </span>
                       <strong className="mini-cart__item__total">
                         R$ {finalPrice.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}

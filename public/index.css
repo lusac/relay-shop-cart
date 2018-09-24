@@ -55,7 +55,7 @@ body, html {
 .mini-cart {
   z-index: 2;
   right: 25px;
-  width: 360px;
+  width: 400px;
   color: #666;
   position: absolute;
   background: #FFF;
@@ -118,17 +118,28 @@ body, html {
   border-top: 1px solid #BBB;
 }
 .mini-cart__change-qty {
-  display: block;
-  margin-top: 10px;
+  display: flex;
   font-size: 14px;
+  margin-top: 10px;
+  align-items: center;
+}
+.mini-cart__change-qty input {
+  width: 30px;
+  margin: 0px 6px;
+  text-align: center;
 }
 .mini-cart__change-qty span {
+  width: 16px;
+  display: flex;
+  color: #FFF;
   cursor: pointer;
-  display: inline-block;
-  text-decoration: underline;
-}
-.mini-cart__change-qty > span {
-  margin-right: 15px;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  align-items: center;
+  border-radius: 60px;
+  background: #3d4fbb;
+  justify-content: center;
 }
 .mini-cart__empty-cart {
   font-size: 28px;
