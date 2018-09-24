@@ -9,8 +9,20 @@ type AddProductToCartPayload {
   clientMutationId: String
 }
 
+input DecreaseProductToCartInput {
+  id: ID!
+  clientMutationId: String
+}
+
+type DecreaseProductToCartPayload {
+  product: Product
+  viewer: User
+  clientMutationId: String
+}
+
 type Mutation {
   addProductToCart(input: AddProductToCartInput!): AddProductToCartPayload
+  decreaseProductToCart(input: DecreaseProductToCartInput!): DecreaseProductToCartPayload
 }
 
 """An object with an ID"""

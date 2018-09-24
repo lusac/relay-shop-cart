@@ -1,5 +1,6 @@
 import React from 'react'
 import AddProductToCartMutation from '../mutations/AddProductToCartMutation'
+import DecreaseProductToCartMutation from '../mutations/DecreaseProductToCartMutation'
 
 export default class MiniCart extends React.Component {
   _handleIncreaseProduct(product) {
@@ -11,6 +12,16 @@ export default class MiniCart extends React.Component {
       return;
     }
     alert('Produto Esgotado!')
+  }
+
+  _handleDecreaseProduct(product) {
+    if (product.qty > 0) {
+      DecreaseProductToCartMutation.commit(
+        this.props.environment,
+        product
+      )
+      return;
+    }
   }
 
   _handleToggle() {
@@ -40,7 +51,7 @@ export default class MiniCart extends React.Component {
                     </small>
                     <span className="mini-cart__change-qty">
                       <span onClick={this._handleIncreaseProduct.bind(this, this.props.items[id])}>aumentar</span>
-                      <span>diminuir</span>
+                      <span onClick={this._handleDecreaseProduct.bind(this, this.props.items[id])}>diminuir</span>
                     </span>
                   </span>
                   <strong className="mini-cart__item__total">
