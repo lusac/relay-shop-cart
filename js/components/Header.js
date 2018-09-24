@@ -47,7 +47,7 @@ export class Header extends React.Component {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="title" color="inherit" noWrap>
-            Minha Lojinha
+            Relay Shop
           </Typography>
 
           <div>

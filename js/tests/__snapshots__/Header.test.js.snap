@@ -10,7 +10,7 @@ exports[`Header component snapshot Header default 1`] = `
     <h2
       className="MuiTypography-root-41 MuiTypography-title-47 MuiTypography-colorInherit-61 MuiTypography-noWrap-58"
     >
-      Minha Lojinha
+      Relay Shop
     </h2>
     <div>
       <button
