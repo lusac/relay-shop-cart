@@ -1,0 +1,58 @@
+$padding: 10px;
+$font-color: #666;
+$border-color: #BBB;
+
+.mini-cart {
+  z-index: 2;
+  width: 360px;
+  color: $font-color;
+  position: absolute;
+  background: #FFF;
+  border: 1px solid $border-color;
+  transition: .5s ease all;
+  box-shadow: 0px 0px 6px rgba(0,0,0, 0.4);
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__header {
+    padding: $padding;
+    color: $font-color;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__items {
+    height: 270px;
+    overflow: hidden;
+    padding: $padding;
+    overflow-y: scroll;
+  }
+
+  &__item {
+    display: flex;
+    padding: 15px 0;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #DDD;
+
+    &__name {
+      width: 160px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &__img {
+      width: auto;
+      height: 70px;
+    }
+  }
+
+  &__footer {
+    padding: 20px;
+    background: #EEE;
+    border-top: 1px solid $border-color;
+  }
+}
