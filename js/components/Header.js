@@ -66,7 +66,8 @@ export class Header extends React.Component {
               show={this.state.showMiniCart}
               items={this._getFormatProductsDate()}
               totalPrice={this._getCartTotalPrice()}
-              environment={this.props.relay.environment} />
+              environment={this.props.relay.environment}
+              handleClose={this._toggleMiniCart.bind(this)} />
           </div>
         </Toolbar>
       </AppBar>
