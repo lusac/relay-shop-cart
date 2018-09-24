@@ -13,6 +13,7 @@ export default class MiniCart extends React.Component {
         <div className="mini-cart__section">
           <ul className="mini-cart__items">
             {Object.keys(this.props.items).map((id) => {
+              let finalPrice = this.props.items[id].qty * this.props.items[id].price
               return (
                 <li key={id} className="mini-cart__item">
                   <img
@@ -27,7 +28,7 @@ export default class MiniCart extends React.Component {
                     </small>
                   </span>
                   <strong className="mini-cart__item__total">
-                    R$ {this.props.items[id].qty * this.props.items[id].price}
+                    R$ {finalPrice.toFixed(2)}
                   </strong>
                 </li>
               )
