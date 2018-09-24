@@ -26,9 +26,8 @@ export class Product extends React.Component {
       <Card className="card">
         <CardMedia
           className="card__media"
-          image={'/imgs/' + this.props.product.image}
           title="Contemplative Reptile"
-        />
+          image={'/imgs/' + this.props.product.image} />
         <CardContent>
           <Typography
             gutterBottom
@@ -37,11 +36,17 @@ export class Product extends React.Component {
             {this.props.product.name}
           </Typography>
           <Typography component="p">
-            R$ {this.props.product.price.toFixed(2)} - {this.props.product.amount}
+            Em estoque: {this.props.product.amount}
+          </Typography>
+          <Typography
+            component="p"
+            className="card__price">
+            R$ {this.props.product.price.toFixed(2)}
           </Typography>
         </CardContent>
         <CardActions>
           <Button
+            className="card__button"
             onClick={this._handleBuyProduct}
             variant="contained"
             color="primary">

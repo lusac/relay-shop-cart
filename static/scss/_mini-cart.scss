@@ -4,12 +4,13 @@ $border-color: #BBB;
 
 .mini-cart {
   z-index: 2;
+  right: 25px;
   width: 360px;
   color: $font-color;
   position: absolute;
   background: #FFF;
-  border: 1px solid $border-color;
   transition: .5s ease all;
+  border: 1px solid $border-color;
   box-shadow: 0px 0px 6px rgba(0,0,0, 0.4);
 
   &.hidden {
@@ -78,5 +79,12 @@ $border-color: #BBB;
     &>span {
       margin-right: 15px;
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .mini-cart {
+    right: 0;
+    width: 100%;
   }
 }

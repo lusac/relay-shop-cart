@@ -8,7 +8,6 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import {createFragmentContainer, graphql} from 'react-relay'
 import MiniCart from './MiniCart'
 
-
 export class Header extends React.Component {
   state = {
     showMiniCart: false
@@ -45,16 +44,20 @@ export class Header extends React.Component {
   render() {
     return (
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className="header__toolbar">
           <Typography variant="title" color="inherit" noWrap>
             Relay Shop
           </Typography>
 
           <div>
+            <small>{this._getCartTotalPrice()}</small>
+
             <IconButton
               color="inherit"
               onClick={this._toggleMiniCart.bind(this)}>
-              <Badge badgeContent={this.props.viewer.cart.edges.length} color="secondary">
+              <Badge
+                color="secondary"
+                badgeContent={this.props.viewer.cart.edges.length}>
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>
@@ -65,8 +68,6 @@ export class Header extends React.Component {
               totalPrice={this._getCartTotalPrice()}
               environment={this.props.relay.environment} />
           </div>
-
-          <small>{this._getCartTotalPrice()}</small>
         </Toolbar>
       </AppBar>
     )
@@ -92,5 +93,5 @@ export default createFragmentContainer(Header, {
       id
       ...Product_viewer
     }
-  `,
+  `
 })
