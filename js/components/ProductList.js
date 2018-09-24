@@ -5,7 +5,7 @@ import Product from './Product'
 
 
 export class ProductList extends React.Component {
-  renderProducts() {
+  _renderProducts() {
     return this.props.products.map(product => (
       <Product key={product.id} product={product} viewer={this.props.viewer} />
     ))
@@ -14,7 +14,7 @@ export class ProductList extends React.Component {
   render() {
     return (
       <section className="main">
-        <ul className="product-list">{this.renderProducts()}</ul>
+        <ul className="product-list">{this._renderProducts()}</ul>
       </section>
     )
   }
