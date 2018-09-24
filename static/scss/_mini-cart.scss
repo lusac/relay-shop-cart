@@ -37,6 +37,10 @@ $border-color: #BBB;
     justify-content: space-between;
     border-bottom: 1px solid #DDD;
 
+    &__remove {
+      cursor: pointer;
+    }
+
     &__name {
       width: 160px;
       overflow: hidden;

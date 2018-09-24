@@ -47,7 +47,7 @@ export default class MiniCart extends React.Component {
               let finalPrice = this.props.items[id].qty * this.props.items[id].price
               return (
                 <li key={id} className="mini-cart__item">
-                  <span onClick={this._handleRemoveProduct.bind(this, this.props.items[id])}>X</span>
+                  <span className="mini-cart__item__remove" onClick={this._handleRemoveProduct.bind(this, this.props.items[id])}>X</span>
                   <img
                     className="mini-cart__item__img"
                     src={'/imgs/' + this.props.items[id].image}></img>
