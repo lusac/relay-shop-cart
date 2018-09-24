@@ -36,7 +36,7 @@ export default class MiniCart extends React.Component {
           </ul>
         </div>
         <div className="mini-cart__footer">
-          total R$ {this.props.totalPrice}
+          total R$ {this.props.totalPrice.toFixed(2)}
         </div>
       </div>
     )
