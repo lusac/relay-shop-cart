@@ -27,8 +27,21 @@ $border-color: #BBB;
   &__items {
     height: 270px;
     overflow: hidden;
+    list-style: none;
     padding: $padding;
     overflow-y: scroll;
+
+    &--empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &>li {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
   }
 
   &__item {
@@ -79,6 +92,10 @@ $border-color: #BBB;
     &>span {
       margin-right: 15px;
     }
+  }
+
+  &__empty-cart {
+    font-size: 28px;
   }
 }
 

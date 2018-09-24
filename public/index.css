@@ -75,8 +75,19 @@ body, html {
 .mini-cart__items {
   height: 270px;
   overflow: hidden;
+  list-style: none;
   padding: 10px;
   overflow-y: scroll;
+}
+.mini-cart__items--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mini-cart__items--empty > li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .mini-cart__item {
   display: flex;
@@ -118,6 +129,9 @@ body, html {
 }
 .mini-cart__change-qty > span {
   margin-right: 15px;
+}
+.mini-cart__empty-cart {
+  font-size: 28px;
 }
 
 @media only screen and (max-width: 600px) {
