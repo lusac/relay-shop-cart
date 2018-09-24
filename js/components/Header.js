@@ -8,6 +8,13 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import {createFragmentContainer, graphql} from 'react-relay'
 
 class Header extends React.Component {
+  getCartTotalPrice = () => {
+    let total = 0
+    this.props.viewer.cart.edges.map((product) => {
+      total += product.node.price
+    })
+    return `R$ ${total.toFixed(2)}`
+  }
   render() {
     return (
       <AppBar position="static">
@@ -21,6 +28,8 @@ class Header extends React.Component {
               <ShoppingCartIcon />
             </Badge>
           </IconButton>
+
+          <small>{this.getCartTotalPrice()}</small>
         </Toolbar>
       </AppBar>
     )
@@ -36,6 +45,7 @@ export default createFragmentContainer(Header, {
         edges {
           node {
             id
+            price
             ...Product_product
           }
         }
