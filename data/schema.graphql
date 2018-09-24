@@ -1,3 +1,18 @@
+input AddProductToCartInput {
+  id: ID!
+  clientMutationId: String
+}
+
+type AddProductToCartPayload {
+  product: Product
+  viewer: User
+  clientMutationId: String
+}
+
+type Mutation {
+  addProductToCart(input: AddProductToCartInput!): AddProductToCartPayload
+}
+
 """An object with an ID"""
 interface Node {
   """The id of the object."""
@@ -48,6 +63,7 @@ type ProductEdge {
 
 type Query {
   viewer: User
+  products: [Product]
 
   """Fetches an object given its ID"""
   node(
@@ -59,5 +75,5 @@ type Query {
 type User implements Node {
   """The ID of an object"""
   id: ID!
-  products(status: String = "any", after: String, first: Int, before: String, last: Int): ProductConnection
+  cart(after: String, first: Int, before: String, last: Int): ProductConnection
 }

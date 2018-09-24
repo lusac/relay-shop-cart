@@ -1,14 +1,27 @@
-import React from 'react';
-import Card from '@material-ui/core/Card';
-import Button from '@material-ui/core/Button';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import {createFragmentContainer, graphql} from 'react-relay';
+import React from 'react'
+import Card from '@material-ui/core/Card'
+import Button from '@material-ui/core/Button'
+import CardMedia from '@material-ui/core/CardMedia'
+import Typography from '@material-ui/core/Typography'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import {createFragmentContainer, graphql} from 'react-relay'
+import AddProductToCartMutation from '../mutations/AddProductToCartMutation'
 
 class Product extends React.Component {
+  _handleBuyProduct = () => {
+    if (this.props.product.amount > 0) {
+      AddProductToCartMutation.commit(
+        this.props.relay.environment,
+        this.props.product,
+        this.props.viewer
+      )
+      return;
+    }
+
+    alert('Produto Esgotado!')
+  }
+
   render() {
     return (
       <Card className="card">
@@ -25,16 +38,19 @@ class Product extends React.Component {
             {this.props.product.name}
           </Typography>
           <Typography component="p">
-            R$ {this.props.product.price.toFixed(2)}
+            R$ {this.props.product.price.toFixed(2)} - {this.props.product.amount}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button variant="contained" color="primary">
+          <Button
+            onClick={this._handleBuyProduct}
+            variant="contained"
+            color="primary">
             Comprar
           </Button>
         </CardActions>
       </Card>
-    );
+    )
   }
 }
 
@@ -53,4 +69,4 @@ export default createFragmentContainer(Product, {
       id
     }
   `,
-});
+})

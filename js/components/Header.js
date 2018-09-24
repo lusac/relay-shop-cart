@@ -1,12 +1,13 @@
-import React from 'react';
-import Badge from '@material-ui/core/Badge';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import React from 'react'
+import Badge from '@material-ui/core/Badge'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import IconButton from '@material-ui/core/IconButton'
+import Typography from '@material-ui/core/Typography'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
+import {createFragmentContainer, graphql} from 'react-relay'
 
-export default class Header extends React.Component {
+class Header extends React.Component {
   render() {
     return (
       <AppBar position="static">
@@ -16,7 +17,7 @@ export default class Header extends React.Component {
           </Typography>
 
           <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
+            <Badge badgeContent={this.props.viewer.cart.edges.length} color="secondary">
               <ShoppingCartIcon />
             </Badge>
           </IconButton>
@@ -25,3 +26,22 @@ export default class Header extends React.Component {
     )
   }
 }
+
+export default createFragmentContainer(Header, {
+  viewer: graphql`
+    fragment Header_viewer on User {
+      cart(
+        first: 2147483647 # max GraphQLInt
+      ) @connection(key: "Header_cart") {
+        edges {
+          node {
+            id
+            ...Product_product
+          }
+        }
+      }
+      id
+      ...Product_viewer
+    }
+  `,
+})

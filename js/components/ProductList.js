@@ -1,14 +1,14 @@
-import React from 'react';
-import {createFragmentContainer, graphql} from 'react-relay';
+import React from 'react'
+import {createFragmentContainer, graphql} from 'react-relay'
 
-import Product from './Product';
+import Product from './Product'
 
 
 class ProductList extends React.Component {
   renderProducts() {
-    return this.props.viewer.products.edges.map(edge => (
-      <Product key={edge.node.id} product={edge.node} viewer={this.props.viewer} />
-    ));
+    return this.props.products.map(product => (
+      <Product key={product.id} product={product} viewer={this.props.viewer} />
+    ))
   }
 
   render() {
@@ -16,25 +16,15 @@ class ProductList extends React.Component {
       <section className="main">
         <ul className="product-list">{this.renderProducts()}</ul>
       </section>
-    );
+    )
   }
 }
 
 export default createFragmentContainer(ProductList, {
   viewer: graphql`
     fragment ProductList_viewer on User {
-      products(
-        first: 2147483647 # max GraphQLInt
-      ) @connection(key: "ProductList_products") {
-        edges {
-          node {
-            id
-            ...Product_product
-          }
-        }
-      }
       id
       ...Product_viewer
     }
-  `,
-});
+  `
+})

@@ -1,11 +1,12 @@
 import {
-  GraphQLBoolean,
-  GraphQLInt,
+  GraphQLID,
   GraphQLFloat,
   GraphQLObjectType,
   GraphQLSchema,
-  GraphQLString
-} from 'graphql';
+  GraphQLString,
+  GraphQLNonNull,
+  GraphQLList,
+} from 'graphql'
 
 import {
   connectionArgs,
@@ -13,37 +14,40 @@ import {
   connectionFromArray,
   fromGlobalId,
   globalIdField,
-  nodeDefinitions
-} from 'graphql-relay';
+  nodeDefinitions,
+  mutationWithClientMutationId
+} from 'graphql-relay'
 
 import {
   Product,
   User,
   getProduct,
   getProducts,
+  getCart,
   getUser,
-  getViewer
-} from './database';
+  getViewer,
+  addProductToCart,
+} from './database'
 
 const {nodeInterface, nodeField} = nodeDefinitions(
   globalId => {
-    const {type, id} = fromGlobalId(globalId);
+    const {type, id} = fromGlobalId(globalId)
     if (type === 'Product') {
-      return getProduct(id);
+      return getProduct(id)
     } else if (type === 'User') {
-      return getUser(id);
+      return getUser(id)
     }
-    return null;
+    return null
   },
   obj => {
     if (obj instanceof Product) {
-      return GraphQLProduct;
+      return GraphQLProduct
     } else if (obj instanceof User) {
-      return GraphQLUser;
+      return GraphQLUser
     }
-    return null;
+    return null
   },
-);
+)
 
 const GraphQLProduct = new GraphQLObjectType({
   name: 'Product',
@@ -67,47 +71,74 @@ const GraphQLProduct = new GraphQLObjectType({
     }
   },
   interfaces: [nodeInterface],
-});
+})
 
 const {
-  connectionType: ProductsConnection,
-  edgeType: GraphQLProductEdge,
+  connectionType: ProductsConnection
 } = connectionDefinitions({
-  name: 'Product',
-  nodeType: GraphQLProduct,
-});
+  nodeType: GraphQLProduct
+})
 
 const GraphQLUser = new GraphQLObjectType({
   name: 'User',
   fields: {
     id: globalIdField('User'),
-    products: {
+    cart: {
       type: ProductsConnection,
-      args: {
-        status: {
-          type: GraphQLString,
-          defaultValue: 'any',
-        },
-        ...connectionArgs,
-      },
-      resolve: (obj, {status, ...args}) =>
-        connectionFromArray(getProducts(status), args),
+      args: connectionArgs,
+      resolve: (obj, args) =>
+        connectionFromArray(getCart(), args)
     }
   },
-  interfaces: [nodeInterface],
-});
+  interfaces: [nodeInterface]
+})
+
+const GraphQLAddProductToCartMutation = mutationWithClientMutationId({
+  name: 'AddProductToCart',
+  inputFields: {
+    id: {type: new GraphQLNonNull(GraphQLID)}
+  },
+  outputFields: {
+    product: {
+      type: GraphQLProduct,
+      resolve: ({localProductId}) => getProduct(localProductId)
+    },
+    viewer: {
+      type: GraphQLUser,
+      resolve: () => {
+        return getViewer()},
+    }
+  },
+  mutateAndGetPayload: ({id}) => {
+    const localProductId = fromGlobalId(id).id
+    addProductToCart(localProductId)
+    return {localProductId}
+  }
+})
 
 const Query = new GraphQLObjectType({
   name: 'Query',
   fields: {
     viewer: {
       type: GraphQLUser,
-      resolve: () => getViewer(),
+      resolve: () => getViewer()
     },
-    node: nodeField,
-  },
-});
+    products: {
+      type: new GraphQLList(GraphQLProduct),
+      resolve: () => getProducts()
+    },
+    node: nodeField
+  }
+})
+
+const Mutation = new GraphQLObjectType({
+  name: 'Mutation',
+  fields: () => ({
+    addProductToCart: GraphQLAddProductToCartMutation
+  })
+})
 
 export const schema = new GraphQLSchema({
-  query: Query
-});
+  query: Query,
+  mutation: Mutation
+})
