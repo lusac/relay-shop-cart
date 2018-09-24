@@ -62,7 +62,8 @@ class Header extends React.Component {
             <MiniCart
               show={this.state.showMiniCart}
               items={this._getFormatProductsDate()}
-              totalPrice={this._getCartTotalPrice()} />
+              totalPrice={this._getCartTotalPrice()}
+              environment={this.props.relay.environment} />
           </div>
 
           <small>{this._getCartTotalPrice()}</small>
@@ -84,6 +85,7 @@ export default createFragmentContainer(Header, {
             price
             name
             image
+            amount
           }
         }
       }
