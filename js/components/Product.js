@@ -41,7 +41,7 @@ export class Product extends React.Component {
           <Typography
             component="p"
             className="card__price">
-            R$ {this.props.product.price.toFixed(2)}
+            R$ {this.props.product.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
           </Typography>
         </CardContent>
         <CardActions>

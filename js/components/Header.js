@@ -22,7 +22,7 @@ export class Header extends React.Component {
     this.props.viewer.cart.edges.map((product) => {
       total += product.node.price
     })
-    return `R$ ${total.toFixed(2)}`
+    return `R$ ${total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}`
   }
 
   _getFormatProductsDate = () => {

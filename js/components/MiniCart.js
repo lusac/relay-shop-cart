@@ -70,7 +70,7 @@ export default class MiniCart extends React.Component {
                         </span>
                       </span>
                       <strong className="mini-cart__item__total">
-                        R$ {finalPrice.toFixed(2)}
+                        R$ {finalPrice.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
                       </strong>
                     </li>
                   )
