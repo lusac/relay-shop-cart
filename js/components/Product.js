@@ -13,8 +13,7 @@ class Product extends React.Component {
     if (this.props.product.amount > 0) {
       AddProductToCartMutation.commit(
         this.props.relay.environment,
-        this.props.product,
-        this.props.viewer
+        this.props.product
       )
       return;
     }

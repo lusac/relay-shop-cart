@@ -79,10 +79,26 @@ body, html {
   width: auto;
   height: 70px;
 }
+.mini-cart__item__qty {
+  display: block;
+}
 .mini-cart__footer {
   padding: 20px;
   background: #EEE;
   border-top: 1px solid #BBB;
+}
+.mini-cart__change-qty {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.mini-cart__change-qty span {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: underline;
+}
+.mini-cart__change-qty > span {
+  margin-right: 15px;
 }
 
 /*# sourceMappingURL=index.css.map */

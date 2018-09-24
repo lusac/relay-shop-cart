@@ -48,11 +48,31 @@ $border-color: #BBB;
       width: auto;
       height: 70px;
     }
+
+    &__qty {
+      display: block;
+    }
   }
 
   &__footer {
     padding: 20px;
     background: #EEE;
     border-top: 1px solid $border-color;
+  }
+
+  &__change-qty {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+
+    span {
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: underline;
+    }
+
+    &>span {
+      margin-right: 15px;
+    }
   }
 }

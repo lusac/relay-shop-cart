@@ -52,6 +52,22 @@ export function addProductToCart(id) {
   viewer.cart.push(product)
 }
 
+export function decreaseProductToCart(id) {
+  const product = getProduct(id)
+  product.amount++
+  let idRemoved = false
+
+  // Preciso remover apenas 1 da lista
+  // Obs: se fosse um dicionario seria beeem mais facil
+  viewer.cart = viewer.cart.filter(product => {
+    if (product.id!==product.id || idRemoved) {
+     return product
+    } else if (!idRemoved) {
+     idRemoved = true
+    }
+  })
+}
+
 addProduct('Game God Of War - PS4', 129.99, 'product_img1.jpg', 7)
 addProduct('iPhone 8 Plus Prata 64GB Tela 5.5" IOS 11 4G Wi-Fi Câmera 12MP - Apple', 3799, 'product_img2.jpg', 7)
 addProduct('Livro - O Encontro dos Clássicos: Tolkien & George R. R. Martin + Pin Exclusivo', 34.99, 'product_img3.jpg', 3)

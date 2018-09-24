@@ -1,8 +1,8 @@
 import {commitMutation, graphql} from 'react-relay'
 
 const mutation = graphql`
-  mutation AddProductToCartMutation($input: AddProductToCartInput!) {
-    addProductToCart(input: $input) {
+  mutation DecreaseProductToCartMutation($input: DecreaseProductToCartInput!) {
+    decreaseProductToCart(input: $input) {
       product {
         amount
       }
