@@ -59,11 +59,12 @@ export function decreaseProductToCart(id) {
 
   // Preciso remover apenas 1 da lista
   // Obs: se fosse um dicionario seria beeem mais facil
-  viewer.cart = viewer.cart.filter(product => {
-    if (product.id!==product.id || idRemoved) {
-     return product
+  viewer.cart = viewer.cart.filter(p => {
+    if (p.id!==product.id || idRemoved) {
+     return p
     } else if (!idRemoved) {
      idRemoved = true
+     return
     }
   })
 }
