@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3, p, ul {
+h1, h2, h3, h4, h5, h6, p, ul {
   margin: 0;
   padding: 0;
 }
@@ -35,6 +35,19 @@ body, html {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+}
+
+.cart-item {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+.cart-item__name {
+  width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cart-item__img {
+  width: 46px;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -24,7 +24,6 @@ export function addProduct(name, price, image, amount) {
   product.image = image
   product.amount = amount
   productsById[product.id] = product
-  return product.id
 }
 
 export function getProduct(id) {
