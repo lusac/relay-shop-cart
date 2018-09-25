@@ -26,7 +26,7 @@ const styles = theme => ({
   },
 })
 
-class SimpleModal extends React.Component {
+export class SimpleModal extends React.Component {
   _handleBuyProduct = () => {
     if (this.props.product.amount > 0) {
       AddProductToCartMutation.commit(
@@ -42,11 +42,10 @@ class SimpleModal extends React.Component {
   render() {
     return (
       <div>
-        {this.props.product &&
+        {this.props.product && this.props.open &&
           <Modal
             open={this.props.open}
-            onClose={this.props.handleClose}
-          >
+            onClose={this.props.handleClose}>
             <div style={getModalStyle()} className={this.props.classes.paper}>
               <img className="modal__img" src={'/imgs/' + this.props.product.image}></img>
               <Typography variant="title" className="modal__title">

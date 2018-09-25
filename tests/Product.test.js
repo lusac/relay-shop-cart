@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import {Product} from '../js/components/Product'
+import { Product } from '../js/components/Product'
 import { shallow, configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import AddProductToCartMutation from '../js/mutations/AddProductToCartMutation'
