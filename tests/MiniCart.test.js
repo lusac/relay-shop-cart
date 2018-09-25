@@ -1,11 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import MiniCart from '../components/MiniCart'
+import MiniCart from '../js/components/MiniCart'
 import { shallow, configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import AddProductToCartMutation from '../mutations/AddProductToCartMutation'
-import DecreaseProductToCartMutation from '../mutations/DecreaseProductToCartMutation'
-import RemoveProductToCartMutation from '../mutations/RemoveProductToCartMutation'
+import AddProductToCartMutation from '../js/mutations/AddProductToCartMutation'
+import DecreaseProductToCartMutation from '../js/mutations/DecreaseProductToCartMutation'
+import RemoveProductToCartMutation from '../js/mutations/RemoveProductToCartMutation'
 
 configure({ adapter: new Adapter() })
 
