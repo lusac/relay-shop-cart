@@ -1,0 +1,26 @@
+.modal {
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    margin-top: 15px !important;
+  }
+
+  &__subtitle {
+    margin-top: 10px !important;
+  }
+
+  &__price {
+    width: 100%;
+    display: block;
+    font-size: 30px;
+    margin-top: 10px;
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: 15px !important;
+  }
+}

@@ -19,6 +19,10 @@ body, html {
   justify-content: space-between;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .card {
   margin: 5px;
   width: 220px;
@@ -49,7 +53,7 @@ body, html {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .mini-cart {
@@ -160,6 +164,26 @@ body, html {
     right: 0;
     width: 100%;
   }
+}
+.modal__img {
+  width: 100%;
+  height: auto;
+}
+.modal__title {
+  margin-top: 15px !important;
+}
+.modal__subtitle {
+  margin-top: 10px !important;
+}
+.modal__price {
+  width: 100%;
+  display: block;
+  font-size: 30px;
+  margin-top: 10px;
+}
+.modal__button {
+  width: 100%;
+  margin-top: 15px !important;
 }
 
 /*# sourceMappingURL=index.css.map */
