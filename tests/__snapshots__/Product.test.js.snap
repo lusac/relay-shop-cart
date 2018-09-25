@@ -2,10 +2,11 @@
 
 exports[`Product component snapshot Product default 1`] = `
 <div
-  className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1 card"
+  className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1 card cursor-pointer"
 >
   <div
     className="MuiCardMedia-root-29 card__media"
+    onClick={[Function]}
     style={
       Object {
         "backgroundImage": "url(\\"/imgs/a.png\\")",
@@ -15,6 +16,7 @@ exports[`Product component snapshot Product default 1`] = `
   />
   <div
     className="MuiCardContent-root-31"
+    onClick={[Function]}
   >
     <h3
       className="MuiTypography-root-32 MuiTypography-subheading-39 MuiTypography-gutterBottom-50 card__title"

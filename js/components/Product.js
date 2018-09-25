@@ -7,28 +7,39 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import {createFragmentContainer, graphql} from 'react-relay'
 import AddProductToCartMutation from '../mutations/AddProductToCartMutation'
+import SimpleModalWrapped from '../components/Modal'
 
 export class Product extends React.Component {
+  state = {
+    isModalOpen: false
+  }
+
   _handleBuyProduct = () => {
     if (this.props.product.amount > 0) {
       AddProductToCartMutation.commit(
         this.props.relay.environment,
         this.props.product
       )
-      return;
+      return
     }
 
     alert('Produto Esgotado!')
   }
 
+  _toggleModal = () => {
+    this.setState({ isModalOpen: !this.state.isModalOpen })
+  }
+
   render() {
     return (
-      <Card className="card">
+      <Card className="card cursor-pointer">
         <CardMedia
+          onClick={this._toggleModal}
           className="card__media"
           title="Contemplative Reptile"
           image={'/imgs/' + this.props.product.image} />
-        <CardContent>
+        <CardContent
+          onClick={this._toggleModal}>
           <Typography
             gutterBottom
             variant="subheading"
@@ -54,6 +65,13 @@ export class Product extends React.Component {
             Comprar
           </Button>
         </CardActions>
+
+        {this.state.isModalOpen &&
+          <SimpleModalWrapped
+            relay={this.props.relay}
+            open={this.state.isModalOpen}
+            handleClose={this._toggleModal}
+            product={this.props.product} />}
       </Card>
     )
   }
