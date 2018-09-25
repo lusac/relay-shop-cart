@@ -30,6 +30,11 @@ exports[`Header component snapshot Header default 1`] = `
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
+        style={
+          Object {
+            "zIndex": 2,
+          }
+        }
         tabIndex="0"
         type="button"
       >
