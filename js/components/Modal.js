@@ -51,9 +51,6 @@ export class SimpleModal extends React.Component {
               <Typography variant="title" className="modal__title">
                 {this.props.product.name}
               </Typography>
-              <Typography variant="subheading" className="modal__subtitle">
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-              </Typography>
               <p className="modal__subtitle">
                 Em estoque: {this.props.product.amount}
               </p>
