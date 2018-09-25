@@ -30,7 +30,7 @@ describe('Product component', () => {
         let wrapper = shallow(<Product product={product} relay={relay} />)
         spyOn(AddProductToCartMutation, 'commit')
         wrapper.instance()._handleBuyProduct()
-        expect(AddProductToCartMutation.commit).toHaveBeenCalledWith({xunda:1}, product)
+        expect(AddProductToCartMutation.commit).toHaveBeenCalledWith(relay.environment, product)
       })
     })
   })
