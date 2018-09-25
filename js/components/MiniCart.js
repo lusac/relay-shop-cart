@@ -38,7 +38,7 @@ export default class MiniCart extends React.Component {
   }
 
   render() {
-    let itemsKeys = Object.keys(this.props.items)
+    let itemsKeys = Object.keys(this.props.items).sort()
     return (
       <div className={this._handleToggle()}>
         <div
