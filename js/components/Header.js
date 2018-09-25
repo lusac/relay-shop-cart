@@ -53,6 +53,7 @@ export class Header extends React.Component {
             <small>{this._getCartTotalPrice()}</small>
 
             <IconButton
+              style={{ zIndex: 2}}
               color="inherit"
               onClick={this._toggleMiniCart.bind(this)}>
               <Badge
