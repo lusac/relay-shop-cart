@@ -47,7 +47,7 @@ export class Product extends React.Component {
         <CardActions>
           <Button
             className="card__button"
-            disabled={this.props.product.amount > 0 ? '' : true}
+            disabled={this.props.product.amount > 0 ? false : true}
             onClick={this._handleBuyProduct}
             variant="contained"
             color="primary">
