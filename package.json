@@ -5,7 +5,7 @@
     "build": "relay-compiler --src ./js/ --schema ./data/schema.graphql",
     "sass": "sass --watch static/scss/:public/",
     "update-schema": "babel-node ./scripts/updateSchema.js",
-    "test": "jest tests/*test.js --coverage"
+    "test": "jest tests/*test.js"
   },
   "dependencies": {
     "@babel/core": "^7.1.0",
