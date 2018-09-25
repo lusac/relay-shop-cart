@@ -13,8 +13,8 @@ const usersById = {
 }
 
 // Mock Products data
-const productsById = {}
-let nextProductId = 0
+export const productsById = {}
+export let nextProductId = 0
 
 export function addProduct(name, price, image, amount) {
   const product = new Product()
