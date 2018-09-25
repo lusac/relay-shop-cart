@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-npm install
+yarn install
 ```
 
 ## Running
@@ -11,12 +11,18 @@ npm install
 Set up generated files:
 
 ```
-npm run update-schema
-npm run build
+yarn run update-schema
+yarn run build
 ```
 
 Start a local server:
 
 ```
-npm start
+yarn start
+```
+
+Running tests:
+
+```
+yarn test
 ```
