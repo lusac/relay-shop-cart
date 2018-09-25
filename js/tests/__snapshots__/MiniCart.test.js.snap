@@ -45,22 +45,25 @@ exports[`MiniCart component snapshot MiniCart default 1`] = `
             <small
               className="mini-cart__item__qty"
             >
-              Quantidade: 
+              Quantidade:
+              <span
+                className="mini-cart__change-qty"
+              >
+                <span
+                  onClick={[Function]}
+                >
+                  -
+                </span>
+                <input
+                  type="text"
+                />
+                <span
+                  onClick={[Function]}
+                >
+                  +
+                </span>
+              </span>
             </small>
-            <span
-              className="mini-cart__change-qty"
-            >
-              <span
-                onClick={[Function]}
-              >
-                aumentar
-              </span>
-              <span
-                onClick={[Function]}
-              >
-                diminuir
-              </span>
-            </span>
           </span>
           <strong
             className="mini-cart__item__total"
@@ -93,22 +96,25 @@ exports[`MiniCart component snapshot MiniCart default 1`] = `
             <small
               className="mini-cart__item__qty"
             >
-              Quantidade: 
+              Quantidade:
+              <span
+                className="mini-cart__change-qty"
+              >
+                <span
+                  onClick={[Function]}
+                >
+                  -
+                </span>
+                <input
+                  type="text"
+                />
+                <span
+                  onClick={[Function]}
+                >
+                  +
+                </span>
+              </span>
             </small>
-            <span
-              className="mini-cart__change-qty"
-            >
-              <span
-                onClick={[Function]}
-              >
-                aumentar
-              </span>
-              <span
-                onClick={[Function]}
-              >
-                diminuir
-              </span>
-            </span>
           </span>
           <strong
             className="mini-cart__item__total"
@@ -141,22 +147,25 @@ exports[`MiniCart component snapshot MiniCart default 1`] = `
             <small
               className="mini-cart__item__qty"
             >
-              Quantidade: 
+              Quantidade:
+              <span
+                className="mini-cart__change-qty"
+              >
+                <span
+                  onClick={[Function]}
+                >
+                  -
+                </span>
+                <input
+                  type="text"
+                />
+                <span
+                  onClick={[Function]}
+                >
+                  +
+                </span>
+              </span>
             </small>
-            <span
-              className="mini-cart__change-qty"
-            >
-              <span
-                onClick={[Function]}
-              >
-                aumentar
-              </span>
-              <span
-                onClick={[Function]}
-              >
-                diminuir
-              </span>
-            </span>
           </span>
           <strong
             className="mini-cart__item__total"

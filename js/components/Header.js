@@ -25,7 +25,7 @@ export class Header extends React.Component {
     return `R$ ${total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}`
   }
 
-  _getFormatProductsDate = () => {
+  _getFormatProductsData = () => {
     // Melhorar estrutura do carrinho.
     // Já deveria vir como um dicionário.
     let products = {}
@@ -64,7 +64,7 @@ export class Header extends React.Component {
 
             <MiniCart
               show={this.state.showMiniCart}
-              items={this._getFormatProductsDate()}
+              items={this._getFormatProductsData()}
               totalPrice={this._getCartTotalPrice()}
               environment={this.props.relay.environment}
               handleClose={this._toggleMiniCart.bind(this)} />

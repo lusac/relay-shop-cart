@@ -108,23 +108,26 @@ exports[`Header component snapshot Header default 1`] = `
                   <small
                     className="mini-cart__item__qty"
                   >
-                    Quantidade: 
-                    1
+                    Quantidade:
+                    <span
+                      className="mini-cart__change-qty"
+                    >
+                      <span
+                        onClick={[Function]}
+                      >
+                        -
+                      </span>
+                      <input
+                        type="text"
+                        value={1}
+                      />
+                      <span
+                        onClick={[Function]}
+                      >
+                        +
+                      </span>
+                    </span>
                   </small>
-                  <span
-                    className="mini-cart__change-qty"
-                  >
-                    <span
-                      onClick={[Function]}
-                    >
-                      aumentar
-                    </span>
-                    <span
-                      onClick={[Function]}
-                    >
-                      diminuir
-                    </span>
-                  </span>
                 </span>
                 <strong
                   className="mini-cart__item__total"
@@ -155,23 +158,26 @@ exports[`Header component snapshot Header default 1`] = `
                   <small
                     className="mini-cart__item__qty"
                   >
-                    Quantidade: 
-                    1
+                    Quantidade:
+                    <span
+                      className="mini-cart__change-qty"
+                    >
+                      <span
+                        onClick={[Function]}
+                      >
+                        -
+                      </span>
+                      <input
+                        type="text"
+                        value={1}
+                      />
+                      <span
+                        onClick={[Function]}
+                      >
+                        +
+                      </span>
+                    </span>
                   </small>
-                  <span
-                    className="mini-cart__change-qty"
-                  >
-                    <span
-                      onClick={[Function]}
-                    >
-                      aumentar
-                    </span>
-                    <span
-                      onClick={[Function]}
-                    >
-                      diminuir
-                    </span>
-                  </span>
                 </span>
                 <strong
                   className="mini-cart__item__total"
@@ -202,23 +208,26 @@ exports[`Header component snapshot Header default 1`] = `
                   <small
                     className="mini-cart__item__qty"
                   >
-                    Quantidade: 
-                    1
+                    Quantidade:
+                    <span
+                      className="mini-cart__change-qty"
+                    >
+                      <span
+                        onClick={[Function]}
+                      >
+                        -
+                      </span>
+                      <input
+                        type="text"
+                        value={1}
+                      />
+                      <span
+                        onClick={[Function]}
+                      >
+                        +
+                      </span>
+                    </span>
                   </small>
-                  <span
-                    className="mini-cart__change-qty"
-                  >
-                    <span
-                      onClick={[Function]}
-                    >
-                      aumentar
-                    </span>
-                    <span
-                      onClick={[Function]}
-                    >
-                      diminuir
-                    </span>
-                  </span>
                 </span>
                 <strong
                   className="mini-cart__item__total"
